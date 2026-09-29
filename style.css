@@ -1,0 +1,394 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #050505;
+    color: #d8d8d8;
+    font-family: "Courier New", monospace;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================
+   EFEITO DE TELA
+========================= */
+
+.scanlines {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.02),
+            rgba(255,255,255,0.02) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    z-index: 100;
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+.tela-inicial {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.logo {
+    font-size: 80px;
+    letter-spacing: 15px;
+
+    color: #ddd;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 20px #777;
+
+    animation: glitch 3s infinite;
+}
+
+.subtitulo {
+    margin-top: 10px;
+
+    color: #777;
+
+    letter-spacing: 4px;
+}
+
+.alerta {
+    margin-top: 40px;
+
+    color: #9d9d9d;
+
+    border: 1px solid #444;
+
+    padding: 12px 30px;
+}
+
+.tela-inicial button,
+.final button {
+    margin-top: 40px;
+
+    padding: 15px 35px;
+
+    background: transparent;
+
+    color: #ddd;
+
+    border: 1px solid #777;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.tela-inicial button:hover,
+.final button:hover {
+    background: #ddd;
+    color: #050505;
+}
+
+.versao {
+    margin-top: 50px;
+
+    color: #444;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   SISTEMA
+========================= */
+
+.sistema {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding-top: 40px;
+}
+
+header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #333;
+
+    padding-bottom: 15px;
+}
+
+header h1 {
+    letter-spacing: 8px;
+}
+
+header span {
+    color: #555;
+
+    font-size: 12px;
+}
+
+.status {
+    color: #aaa;
+
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+}
+
+.bolinha {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #aaa;
+
+    box-shadow: 0 0 10px #aaa;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.informacoes {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.informacoes div {
+    border: 1px solid #222;
+
+    padding: 12px;
+}
+
+.informacoes small {
+    display: block;
+
+    color: #555;
+
+    font-size: 10px;
+
+    margin-bottom: 5px;
+}
+
+.informacoes strong {
+    font-size: 13px;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat {
+    border: 1px solid #333;
+
+    height: 55vh;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.mensagens {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 25px;
+}
+
+.mensagem {
+    margin-bottom: 20px;
+
+    line-height: 1.6;
+}
+
+.nome {
+    font-weight: bold;
+}
+
+.nexus .nome {
+    color: #aaa;
+}
+
+.usuario .nome {
+    color: #666;
+}
+
+.mensagem p {
+    margin-top: 5px;
+
+    color: #bbb;
+}
+
+.entrada {
+    display: flex;
+
+    border-top: 1px solid #333;
+}
+
+.entrada input {
+    flex: 1;
+
+    background: #080808;
+
+    border: none;
+
+    outline: none;
+
+    padding: 18px;
+
+    color: white;
+
+    font-family: inherit;
+}
+
+.entrada button {
+    width: 70px;
+
+    background: #111;
+
+    border: none;
+
+    border-left: 1px solid #333;
+
+    color: #aaa;
+
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+.entrada button:hover {
+    background: #222;
+}
+
+
+/* =========================
+   COMANDOS
+========================= */
+
+.comandos {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.comandos button {
+    background: transparent;
+
+    border: 1px solid #333;
+
+    color: #777;
+
+    padding: 8px 15px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+.comandos button:hover {
+    color: white;
+
+    border-color: #777;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.final #textoFinal {
+    max-width: 700px;
+
+    font-size: 22px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   CLASSES
+========================= */
+
+.escondido {
+    display: none;
+}
+
+
+/* =========================
+   GLITCH
+========================= */
+
+@keyframes glitch {
+
+    0%, 90%, 100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(-2px, 1px);
+    }
+
+    94% {
+        transform: translate(2px, -1px);
+    }
+
+    96% {
+        transform: translate(-1px, 2px);
+    }
+
+}

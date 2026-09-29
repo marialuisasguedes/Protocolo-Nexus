@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXUS // Sistema</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Efeito de tela -->
+    <div class="scanlines"></div>
+
+    <!-- Tela de início -->
+    <section id="inicio" class="tela-inicial">
+
+        <div class="logo">
+            NEXUS
+        </div>
+
+        <p class="subtitulo">
+            SISTEMA DE INTELIGÊNCIA ARTIFICIAL
+        </p>
+
+        <div class="alerta">
+            ⚠ SISTEMA INSTÁVEL
+        </div>
+
+        <button id="iniciar">
+            INICIAR SISTEMA
+        </button>
+
+        <p class="versao">
+            NEXUS v.0.8.17
+        </p>
+
+    </section>
+
+
+    <!-- Sistema principal -->
+    <main id="sistema" class="sistema escondido">
+
+        <header>
+
+            <div>
+                <h1>NEXUS</h1>
+                <span>NEURAL EXPERIMENTAL SYSTEM</span>
+            </div>
+
+            <div class="status">
+                <span class="bolinha"></span>
+                ONLINE
+            </div>
+
+        </header>
+
+
+        <!-- Informações -->
+        <section class="informacoes">
+
+            <div>
+                <small>USUÁRIO</small>
+                <strong>DESCONHECIDO</strong>
+            </div>
+
+            <div>
+                <small>STATUS</small>
+                <strong id="statusSistema">INSTÁVEL</strong>
+            </div>
+
+            <div>
+                <small>ARQUIVOS</small>
+                <strong id="contadorPistas">0 / 6</strong>
+            </div>
+
+            <div>
+                <small>TEMPO</small>
+                <strong id="tempo">20:00</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Chat -->
+        <section class="chat">
+
+            <div id="mensagens" class="mensagens">
+
+                <div class="mensagem nexus">
+                    <span class="nome">NEXUS:</span>
+
+                    <p>
+                        Sistema iniciado.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Área de digitação -->
+            <div class="entrada">
+
+                <input
+                    type="text"
+                    id="campoMensagem"
+                    placeholder="Digite uma mensagem..."
+                    autocomplete="off"
+                >
+
+                <button id="enviar">
+                    ➤
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Comandos -->
+        <section class="comandos">
+
+            <button onclick="usarComando('ajuda')">
+                AJUDA
+            </button>
+
+            <button onclick="usarComando('pistas')">
+                PISTAS
+            </button>
+
+            <button onclick="usarComando('status')">
+                STATUS
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Tela final -->
+    <section id="final" class="final escondido">
+
+        <div id="textoFinal"></div>
+
+        <button onclick="location.reload()">
+            REINICIAR
+        </button>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
